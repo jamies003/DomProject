@@ -1,8 +1,12 @@
-let search = document.getElementById('search-books');
-let bookList = document.getElementById('book-list');
+const wmf = document.querySelector('#book-list li:nth-child(2) .name');
+console.log(wmf);
 
-console.log(search, bookList);
+var books = document.querySelector('#book-list li .name');
+console.log(books);
 
-Array.from(titles).forEach(function(title){
-  console.log(title);
+books = document.querySelectorAll('#book-list li .name');
+console.log(books);
+
+Array.from(books).forEach(function(book){
+  console.log(book);
 });
