@@ -1,12 +1,38 @@
-const wmf = document.querySelector('#book-list li:nth-child(2) .name');
-console.log(wmf);
+let list = document.querySelector('#book-list ul');
 
-var books = document.querySelector('#book-list li .name');
-console.log(books);
-
-books = document.querySelectorAll('#book-list li .name');
-console.log(books);
-
-Array.from(books).forEach(function(book){
-  console.log(book);
+// delete books
+list.addEventListener('click', function(e){
+  if (e.target.className == 'delete') {
+    let li = e.target.parentElement;
+    list.removeChild(li);
+    // li.parentNode.removeChild(li);
+  }
 });
+
+// add book-list
+let addForm = document.forms['add-book'];
+
+addForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  let value = addForm.querySelector('input[type = "text"]').value;
+  // console.log(value);
+
+  // create element
+  let li = document.createElement('li');
+  let bookName = document.createElement('span');
+  let deleteBtn = document.createElement('span');
+
+  // add content 
+  deleteBtn.textContent = 'delete';
+  bookName.textContent = value;
+
+  // add classes
+  bookName.classList.add('name');
+  deleteBtn.classList.add('delete');
+
+
+
+
+});
+
+
