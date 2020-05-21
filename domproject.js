@@ -30,7 +30,10 @@ addForm.addEventListener('submit', function(e){
   bookName.classList.add('name');
   deleteBtn.classList.add('delete');
 
-
+  // append to document
+  li.appendChild(bookName);
+  li.appendChild(deleteBtn);
+  list.appendChild(li);
 
 
 });
